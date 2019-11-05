@@ -3,12 +3,6 @@ An implementation of Tic-Tac-Toe game with AI through the Minimax aglorithm.
 All source files (ie ```*.java```) are in the src folder.  
 All the generated class files (ie ```*.class```) are seperately kept in the class folder.  
 
-## Authors
-* Kumar Aditya (13000117098)
-* K Uday Bhargav (13000117100)
-* Md. Arsalan (13000117092)
-* Prabal  
-
 ## How To Play 
 Make sure you are in the game root directory.  
 Then run the following command in the terminal: 

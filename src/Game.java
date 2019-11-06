@@ -175,7 +175,7 @@ public class Game extends JPanel {
             System.out.println("\t#    |_| |_|\\___||_|\\__,_|\\___||_|\\___/ \\___|  #");
             System.out.println("\t#                                              #");
             System.out.println("\t################################################");
-            System.out.println("\t\t\t    ver 1.0\nDeveloped By Kumar Aditya, Uday Bhargav, Md. Arsalan and Prabal Roy");
+            System.out.println("\t\t\t    ver 1.0\n\t\tDeveloped By Kumar Aditya");
 
             JFrame frame = new JFrame(TITLE);
 

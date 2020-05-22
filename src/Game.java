@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Tic-Tac-Toe: Two-player Graphic version with better OO design.
  * The Board and Cell classes are separated in their own classes.
- */ 
+ */
 
 @SuppressWarnings("serial")
 public class Game extends JPanel {
@@ -13,7 +13,7 @@ public class Game extends JPanel {
    public static final int ROWS = 3;  // ROWS by COLS cells
    public static final int COLS = 3;
    public static final String TITLE = "Tic Tac Toe";
- 
+
    // Name-constants for the various dimensions used for graphics drawing
    public static final int CELL_SIZE = 100; // cell width and height (square)
    public static final int CANVAS_WIDTH = CELL_SIZE * COLS;  // the drawing canvas
@@ -29,16 +29,16 @@ public class Game extends JPanel {
    public static boolean playerTurn;
    public static boolean botTurn;
    public static int choice;
- 
+
    private Logic logic;
    private Board board;            // the game board
    private GameState currentState; // the current state of the game
    private Seed currentPlayer;     // the current player
    private JLabel statusBar;       // for displaying status message
- 
+
    /** Constructor to setup the UI and game components */
    public Game() {
- 
+
       // This JPanel fires MouseEvent
       this.addMouseListener(new MouseAdapter() {
          @Override
@@ -48,7 +48,7 @@ public class Game extends JPanel {
             // Get the row and column clicked
             int rowSelected = mouseY / CELL_SIZE;
             int colSelected = mouseX / CELL_SIZE;
- 
+
             if (currentState == GameState.PLAYING) {
                if (playerTurn && !botTurn) {
                   if (rowSelected >= 0 && rowSelected < ROWS
@@ -86,23 +86,23 @@ public class Game extends JPanel {
             repaint();  // Call-back paintComponent().
          }
       });
- 
+
       // Setup the status bar (JLabel) to display status message
       statusBar = new JLabel("         ");
       statusBar.setFont(new Font(Font.DIALOG_INPUT, Font.BOLD, 14));
       statusBar.setBorder(BorderFactory.createEmptyBorder(2, 5, 4, 5));
       statusBar.setOpaque(true);
       statusBar.setBackground(Color.LIGHT_GRAY);
- 
+
       setLayout(new BorderLayout());
       add(statusBar, BorderLayout.PAGE_END); // same as SOUTH
       setPreferredSize(new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT + 30));
             // account for statusBar in height
- 
+
       board = new Board();   // allocate the game-board
       initGame();  // Initialize the game variables
    }
- 
+
    /** Initialize the game-board contents and the current-state */
    public void initGame() {
       for (int row = 0; row < ROWS; ++row) {
@@ -117,13 +117,13 @@ public class Game extends JPanel {
       if (choice == 3)  System.exit(0);
       System.out.print("\nCross(X) or Nought(O): ");
       char ch = new Scanner(System.in).next().charAt(0);
-      currentPlayer = (ch == 'X' || ch == 'x')? Seed.CROSS: Seed.NOUGHT ; 
+      currentPlayer = (ch == 'X' || ch == 'x')? Seed.CROSS: Seed.NOUGHT ;
 
       playerTurn = true;
       botTurn = false;
       logic = new Logic(currentPlayer);
    }
- 
+
    /** Update the currentState after the player with "theSeed" has placed on (row, col) */
    public void updateGame(Seed theSeed, int row, int col) {
       if (board.hasWon(theSeed, row, col)) {  // check for win
@@ -131,18 +131,18 @@ public class Game extends JPanel {
       } else if (board.isDraw()) {  // check for draw
          currentState = GameState.DRAW;
       }
-      
+
       // Otherwise, no change to current state (PLAYING).
    }
- 
+
    /** Custom painting codes on this JPanel */
    @Override
    public void paintComponent(Graphics g) {  // invoke via repaint()
       super.paintComponent(g);    // fill background
       setBackground(Color.WHITE); // set its background color
- 
+
       board.paint(g);  // ask the game board to paint itself
- 
+
       // Print status-bar message
       if (currentState == GameState.PLAYING) {
          statusBar.setForeground(Color.BLACK);
@@ -184,8 +184,8 @@ public class Game extends JPanel {
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.pack();
             frame.setLocationRelativeTo(null); // center the application window
-            frame.setVisible(true); 
+            frame.setVisible(true);
          }
       });
    }
-} 
+}

@@ -1,7 +1,5 @@
 # tic-tac-toe
 A Tic-Tac-Toe game with AI by implementing the Minimax aglorithm.
-All source files (ie. ```*.java```) are in the src folder.
-All the generated class files (ie. ```*.class```) are seperately kept in the class folder.
 
 ## How To Play
 Make sure you are in the game root directory.

@@ -1,7 +1,5 @@
 # tic-tac-toe
 A Tic-Tac-Toe game with AI by implementing the Minimax aglorithm.
-All source files (ie. ```*.java```) are in the src folder.
-All the generated class files (ie. ```*.class```) are seperately kept in the class folder.
 
 ## How To Play
 Make sure you are in the game root directory.
@@ -12,15 +10,14 @@ java -jar tictactoe.jar
 ```
 
 ## Build Instructions
-To build the game from source, follow these instructions:
+To build the game from source, follow these instructions:  
 While in game root directory, execute the following command in terminal.
 
 ```console
 javac -d class/ src/Game.java -cp src/
 ```
 
-The ```-d``` flag is used to store the output to different directory. If we don’t use this option then the class file will be created in the src directory.
-The ```-cp``` flag is used to specify class path.  The code won't compile without this flag as there are multiple source files in different folder.
+The ```-d``` flag is used to store the output to different directory. The ```-cp``` flag is used to specify class path. The code won't compile without this flag as there are multiple source files in different folder.  
 Next, change to the class directory:
 
 ```console

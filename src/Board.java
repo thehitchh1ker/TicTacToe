@@ -5,7 +5,7 @@ import java.awt.*;
 public class Board {
    // package access
    Cell[][] cells; // composes of 2D array of ROWS-by-COLS Cell instances
- 
+
    /** Constructor to initialize the game board */
    public Board() {
       cells = new Cell[Game.ROWS][Game.COLS]; // allocate the array
@@ -15,7 +15,7 @@ public class Board {
          }
       }
    }
- 
+
    /** Initialize (or re-initialize) the game board */
    public void init() {
       for (int row = 0; row < Game.ROWS; ++row) {
@@ -24,7 +24,7 @@ public class Board {
          }
       }
    }
- 
+
    /** Return true if it is a draw (i.e., no more EMPTY cell) */
    public boolean isDraw() {
       for (int row = 0; row < Game.ROWS; ++row) {
@@ -36,7 +36,7 @@ public class Board {
       }
       return true; // no empty cell, it's a draw
    }
- 
+
    /** Return true if the player with "seed" has won after placing at
        (seedRow, seedCol) */
    public boolean hasWon(Seed seed, int seedRow, int seedCol) {
@@ -55,7 +55,7 @@ public class Board {
                  && cells[1][1].content == seed
                  && cells[2][0].content == seed);
    }
- 
+
    /** Paint itself on the graphics canvas, given the Graphics context */
    public void paint(Graphics g) {
       // Draw the grid-lines
@@ -70,7 +70,7 @@ public class Board {
                Game.GRID_WIDTH, Game.CANVAS_HEIGHT - 1,
                Game.GRID_WIDTH, Game.GRID_WIDTH);
       }
- 
+
       // Draw all the cells
       for (int row = 0; row < Game.ROWS; ++row) {
          for (int col = 0; col < Game.COLS; ++col) {
@@ -78,4 +78,4 @@ public class Board {
          }
       }
    }
-} 
+}

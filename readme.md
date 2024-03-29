@@ -1,5 +1,5 @@
 # tic-tac-toe
-A Tic-Tac-Toe game with AI by implementing the Minimax aglorithm.
+A Tic-Tac-Toe game with AI by implementing the Minimax algorithm.
 
 ## How To Play
 Make sure you are in the game root directory.
